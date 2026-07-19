@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/jobs/build.yml
+    uses: ./.github/workflows/build.yml
 
   preview:
     name: Deploy Preview
@@ -23,3 +23,14 @@ jobs:
         with:
           name: dist
           path: dist/
+
+      - name: Deploy Preview to Vercel
+        uses: amondnet/vercel-action@v42
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.WRITE_TOKEN }}
+          vercel-org-id: ${{ env.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ env.VERCEL_PROJECT_ID }}
+          target: preview
+          prebuilt: true
+          vercel-output-dir: dist/
