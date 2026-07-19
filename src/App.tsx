@@ -1,22 +1,23 @@
-import { APITester } from './APITester';
-import './index.css';
+import { Routes, Route } from 'react-router-dom';
 
-import logo from './logo.svg';
-import reactLogo from './react.svg';
+import Homepage from './pages/homepage';
+import About from './pages/about';
+import Projects from './pages/projects';
+import Articles from './pages/articles';
+import Contact from './pages/contact';
+import NotFound from './pages/notfound';
 
-export function App() {
+function App() {
   return (
-    <div className="app">
-      <div className="logo-container">
-        <img src={logo} alt="Bun Logo" className="logo bun-logo" />
-        <img src={reactLogo} alt="React Logo" className="logo react-logo" />
-      </div>
-
-      <h1>Bun + React</h1>
-      <p>
-        Edit <code>src/App.tsx</code> and save to test HMR
-      </p>
-      <APITester />
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

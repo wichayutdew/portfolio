@@ -1,0 +1,89 @@
+/* eslint-disable css/no-invalid-properties */
+.works {
+  width: 100%;
+}
+
+.works .card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.works-body {
+  margin-bottom: 10px;
+}
+
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.work-main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.work-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  outline: 6px solid white;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.work-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.work-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.work-subtitle {
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-top: 4px;
+}
+
+.work-location {
+  font-size: 13px;
+  color: var(--tertiary-color);
+  margin-top: 2px;
+}
+
+.work-duration {
+  font-size: 13px;
+  color: var(--tertiary-color);
+  white-space: nowrap;
+}
+
+.work-achievements {
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  padding-left: 50px;
+  width: 100%;
+  list-style-position: outside;
+  font-size: 13px;
+  color: var(--secondary-color);
+}
+
+.work-achievements li {
+  margin-bottom: 5px;
+}

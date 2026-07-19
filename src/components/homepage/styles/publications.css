@@ -1,0 +1,75 @@
+/* eslint-disable css/no-invalid-properties */
+.publications {
+  width: 100%;
+}
+
+.publications .card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.publications-body {
+  margin-bottom: 10px;
+}
+
+.publication {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.publication:last-child {
+  padding-bottom: 0;
+}
+
+.publication-main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.publication-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.publication-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.publication-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a.publication-title {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a.publication-title:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.publication-subtitle {
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-top: 4px;
+}
+
+.publication-detail {
+  padding-top: 10px;
+  width: 100%;
+  font-size: 13px;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}

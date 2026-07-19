@@ -1,0 +1,56 @@
+/* eslint-disable css/no-invalid-properties */
+.proficiency {
+  padding-top: 40px;
+  max-width: 600px;
+}
+
+.proficiency-category {
+  margin-bottom: 24px;
+}
+
+.proficiency-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.proficiency-icon {
+  font-size: 16px;
+  color: var(--primary-color);
+  width: 24px;
+  text-align: center;
+}
+
+.proficiency-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding-left: 12px;
+}
+
+.proficiency-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 36px;
+}
+
+.proficiency-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: var(--quaternary-color);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--secondary-color);
+}
+
+.proficiency-item-icon {
+  font-size: 12px;
+  color: var(--tertiary-color);
+}
+
+.proficiency-item-name {
+  white-space: nowrap;
+}

@@ -1,0 +1,91 @@
+/* eslint-disable css/no-invalid-properties */
+.educations {
+  width: 100%;
+}
+
+.educations .card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.educations-body {
+  margin-bottom: 10px;
+}
+
+.education {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.education:last-child {
+  padding-bottom: 0;
+}
+
+.education-main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.education-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  outline: 6px solid white;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.education-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.education-subtitle {
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-top: 4px;
+}
+
+.education-gpa {
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-top: 2px;
+}
+
+.education-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.education-period {
+  font-size: 13px;
+  color: var(--tertiary-color);
+  white-space: nowrap;
+}
+
+.education-location {
+  font-size: 13px;
+  color: var(--tertiary-color);
+  margin-top: 2px;
+  white-space: nowrap;
+}

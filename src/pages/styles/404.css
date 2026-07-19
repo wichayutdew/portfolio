@@ -1,0 +1,35 @@
+/* eslint-disable css/no-invalid-properties */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.not-found-title {
+  font-family: var(--secondary-font);
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.not-found-subtitle {
+  font-size: 16px;
+  color: var(--secondary-color);
+  padding-top: 20px;
+}
+
+.not-found-link {
+  padding-top: 40px;
+}
+
+.not-found-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.not-found-link a:hover {
+  text-decoration: underline;
+}
