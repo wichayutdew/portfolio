@@ -17,12 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist/
-
       - name: Deploy Production to Vercel
         uses: amondnet/vercel-action@v42
         with:
@@ -31,5 +25,4 @@ jobs:
           vercel-org-id: ${{ env.VERCEL_ORG_ID }}
           vercel-project-id: ${{ env.VERCEL_PROJECT_ID }}
           vercel-args: --prod
-          prebuilt: true
-          vercel-output-dir: dist/
+          vercel-build: true
