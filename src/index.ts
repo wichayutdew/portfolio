@@ -1,6 +1,6 @@
 import { serve } from 'bun';
 import index from './index.html';
-import cvHandler from './api/cv';
+import cvHandler from '../api/cv';
 
 const server = serve({
   routes: {

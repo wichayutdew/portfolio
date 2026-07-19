@@ -1,7 +1,5 @@
 import { get } from '@vercel/blob';
 
-export const runtime = 'edge';
-
 export default async function cvHandler() {
   const result = await get('cv.pdf', { access: 'public' });
   if (!result || result.statusCode !== 200) {
