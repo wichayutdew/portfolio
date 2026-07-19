@@ -10,6 +10,7 @@
     "prepare": "husky",
     "format": "bunx prettier . --write",
     "lint": "bun --bun eslint .",
+    "test": "bun test",
     "lint:fix": "bun --bun eslint . --fix && prettier . --write"
   },
   "lint-staged": {
@@ -20,7 +21,9 @@
     "react-dom": "^19"
   },
   "devDependencies": {
+    "@eslint-react/eslint-plugin": "^5.14.10",
     "@eslint/css": "^1.4.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.0.1",
     "@eslint/markdown": "^8.0.3",
