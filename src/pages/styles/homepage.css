@@ -112,6 +112,16 @@
   padding-top: 30px;
 }
 
+.homepage-education {
+  flex-basis: 100%;
+  padding-top: 30px;
+}
+
+.homepage-publications {
+  flex-basis: 100%;
+  padding-top: 30px;
+}
+
 @media (max-width: 1024px) {
   .homepage-first-area {
     flex-direction: column;
@@ -162,6 +172,18 @@
   }
 
   .homepage-works {
+    flex-basis: auto;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  .homepage-education {
+    flex-basis: auto;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  .homepage-publications {
     flex-basis: auto;
     margin-left: -25px;
     margin-right: -25px;

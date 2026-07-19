@@ -25,6 +25,7 @@ const Works = () => {
                     <div className="work-details">
                       <div className="work-title">{work.company}</div>
                       <div className="work-subtitle">{work.role}</div>
+                      <div className="work-location">{work.location}</div>
                     </div>
                     <div className="work-duration">{work.duration}</div>
                   </div>

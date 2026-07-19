@@ -9,7 +9,8 @@ import Logo from '../components/common/logo';
 import Footer from '../components/common/footer';
 import NavBar from '../components/common/navBar';
 import Works from '../components/homepage/works';
-import AllProjects from '../components/projects/allProjects';
+import Education from '../components/homepage/education';
+import Publications from '../components/homepage/publications';
 
 import INFO from '../data/user';
 import SEO from '../data/seo';
@@ -113,20 +114,24 @@ const Homepage = () => {
 
           <div className="homepage-container">
             <div className="homepage-first-area">
-              <div className="homepage-first-area-left-side">
-                <div className="title homepage-title">
-                  {INFO.homepage.title}
-                </div>
-
-                <div className="subtitle homepage-subtitle">
-                  {INFO.homepage.description}
-                </div>
-              </div>
+              <div className="title homepage-title">{INFO.homepage.title}</div>
             </div>
 
             <div className="homepage-after-title">
               <div className="homepage-works">
                 <Works />
+              </div>
+            </div>
+
+            <div className="homepage-after-title">
+              <div className="homepage-education">
+                <Education />
+              </div>
+            </div>
+
+            <div className="homepage-after-title">
+              <div className="homepage-publications">
+                <Publications />
               </div>
             </div>
 

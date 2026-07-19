@@ -5,6 +5,8 @@ import agodaLogo from '@/assets/agoda.png';
 import exxonMobilLogo from '@/assets/exxonmobil.jpeg';
 import relifnowLogo from '@/assets/relifnow.png';
 import dotfilesLogo from '@/assets/dotfiles.svg';
+import chulaLogo from '@/assets/chula.png';
+import skkuLogo from '@/assets/skku.svg';
 
 const INFO = {
   main: {
@@ -12,6 +14,7 @@ const INFO = {
     name: 'Wichayut (Dew) Phongphanpanya',
     email: 'wichayutdew@gmail.com',
     phone: '+66851194999',
+    location: 'Bangkok, Thailand',
     logo: logoUrl,
     profile: profileImage,
     cv: cvPdf,
@@ -24,14 +27,64 @@ const INFO = {
 
   homepage: {
     title: 'Wichayut (Dew) Phongphanpanya',
-    description:
-      'Senior software engineer with 5+ years of experience in building scalable, secure and reliable applications using various frameworks and technologies. Specialized in JVM ecosystem (Java/Scala/Kotlin) and distributed architectures.',
   },
 
   about: {
     title: 'About me',
     description:
-      'Currently based in Bangkok, Thailand. Worked on a variety of projects over the years.',
+      'Senior software engineer with 5+ years of experience in building scalable, secure and reliable applications using various frameworks and technologies. Specialized in JVM ecosystem (Java/Scala/Kotlin) and distributed architectures.',
+    proficiency: [
+      {
+        name: 'Languages/Frameworks',
+        icon: 'faCode',
+        items: [
+          { name: 'Kotlin', icon: 'faCode' },
+          { name: 'Scala', icon: 'faCode' },
+          { name: 'Java', icon: 'faJava' },
+          { name: 'Python', icon: 'faPython' },
+          { name: 'TypeScript', icon: 'faTypescript' },
+          { name: 'Spring', icon: 'faLeaf' },
+          { name: 'Ktor', icon: 'faServer' },
+          { name: 'Node.js', icon: 'faNodeJs' },
+          { name: 'React', icon: 'faReact' },
+          { name: 'Playwright', icon: 'faTheaterMasks' },
+          { name: 'Jest', icon: 'faFlask' },
+          { name: 'Cucumber', icon: 'faSeedling' },
+        ],
+      },
+      {
+        name: 'Data/Cloud',
+        icon: 'faDatabase',
+        items: [
+          { name: 'Kubernetes', icon: 'faDharmachakra' },
+          { name: 'Docker', icon: 'faDocker' },
+          { name: 'Terraform', icon: 'faCubes' },
+          { name: 'PostgreSQL', icon: 'faDatabase' },
+          { name: 'Redis', icon: 'faServer' },
+          { name: 'Kafka', icon: 'faStream' },
+          { name: 'Apache Spark', icon: 'faBolt' },
+          { name: 'Hadoop', icon: 'faDatabase' },
+          { name: 'Starrocks', icon: 'faStar' },
+          { name: 'GCP', icon: 'faCloud' },
+          { name: 'Azure', icon: 'faCloud' },
+        ],
+      },
+      {
+        name: 'Tools',
+        icon: 'faTools',
+        items: [
+          { name: 'Git', icon: 'faCodeBranch' },
+          { name: 'GitLab', icon: 'faGitlab' },
+          { name: 'GitHub', icon: 'faGithub' },
+          { name: 'Datadog', icon: 'faDog' },
+          { name: 'Grafana', icon: 'faChartLine' },
+          { name: 'Prometheus', icon: 'faFire' },
+          { name: 'Pyroscope', icon: 'faSearch' },
+          { name: 'Neovim', icon: 'faTerminal' },
+          { name: 'Agentic Development (Pi)', icon: 'faRobot' },
+        ],
+      },
+    ],
   },
 
   projects: {
@@ -94,6 +147,7 @@ const WORKS: Array<{
   role: string;
   duration: string;
   image: string;
+  location: string;
   achievements?: string[];
 }> = [
   {
@@ -101,6 +155,7 @@ const WORKS: Array<{
     role: 'Senior Software Engineer',
     duration: 'Feb 2023 - Present',
     image: agodaLogo,
+    location: 'Bangkok, Thailand',
     achievements: [
       'Delivered cross-product marketing systems (Hotels, Flights, Activities), including segmented discount engine and promotion code platform, driving extra $50,000/day incremental bookings.',
       'Built cross-sell platform bundling hotels and activities; integrated external inventory and Ads system (Google Things To Do, TikTok Go, Meta Pixel) via Apache Spark pipelines, generating $20,000/day additional revenue from daily bookings.',
@@ -115,6 +170,7 @@ const WORKS: Array<{
     role: 'Backend Developer',
     duration: 'Apr 2022 - Jan 2023',
     image: exxonMobilLogo,
+    location: 'Bangkok, Thailand',
     achievements: [
       'Developed secure API and data pipelines integrating legacy SAP systems supporting $5 billion fuel supply operations.',
       'Automated Azure CI/CD pipelines using Terraform and Liquibase for Spring Boot microservices',
@@ -125,6 +181,7 @@ const WORKS: Array<{
     role: 'System Coordinator',
     duration: 'Aug 2020 - Mar 2022',
     image: exxonMobilLogo,
+    location: 'Bangkok, Thailand',
     achievements: [
       'Coordinated Mobile/Web/POS development for Esso/Mobil stations across 5 APAC countries (Thailand, Singapore, Hongkong, Macau, New Zealand)',
     ],
@@ -134,6 +191,7 @@ const WORKS: Array<{
     role: 'Founding Engineer',
     duration: 'Jun 2019 - Sept 2023',
     image: relifnowLogo,
+    location: 'Bangkok, Thailand',
     achievements: [
       'Built telehealth cross platform application connecting 10,000 customers with doctors and pharmacies. Enabling cheap online health consultation and medicine purchasing systems.',
       'Managed backend logic and cloud infrastructure using ExpressJS/Java Springboot on GCP Kubernetes/Cloud SQL with automated GitHub Actions CI/CD; Contribute on building cross-platform application using Flutter framework to publish to both IOS App store and Android play store.',
@@ -141,5 +199,47 @@ const WORKS: Array<{
   },
 ];
 
-export { WORKS };
+const EDUCATION: Array<{
+  school: string;
+  degree: string;
+  gpa: string;
+  period: string;
+  location: string;
+  image: string;
+}> = [
+  {
+    school: 'Sungkyunkwan University',
+    degree: 'Exchange Program — Information & Communication Engineering',
+    gpa: '4.20/4.50',
+    period: 'Aug 2019 - Dec 2019',
+    location: 'Seoul, South Korea',
+    image: skkuLogo,
+  },
+
+  {
+    school: 'International School of Engineering, Chulalongkorn University',
+    degree: 'B.Eng. Information & Communication Engineering',
+    gpa: '3.24/4.00',
+    period: 'Aug 2016 - May 2020',
+    location: 'Bangkok, Thailand',
+    image: chulaLogo,
+  },
+];
+
+const PUBLICATIONS: Array<{
+  conference: string;
+  project: string;
+  detail: string;
+  url?: string;
+}> = [
+  {
+    conference: 'IEEE International Smart Cities Conference (ISC2 2019)',
+    project: 'Park King: An IoT-based Smart Parking System',
+    detail:
+      'Developed the Chulalongkorn University campus internal parking reservation web app using Express.js, integrating Raspberry Pi devices, presence sensors, and automated parking flaps for real-time space detection and control.',
+    url: 'https://ieeexplore.ieee.org/document/9071721',
+  },
+];
+
+export { WORKS, EDUCATION, PUBLICATIONS };
 export default INFO;
