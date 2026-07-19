@@ -13,8 +13,8 @@ const Works = () => {
         title="Work"
         body={
           <div className="works-body">
-            {WORKS.map((work) => (
-              <div className="work" key={work.company}>
+            {WORKS.map((work, idx) => (
+              <div className="work" key={work.company + idx}>
                 <img
                   src={work.image}
                   alt={work.company}

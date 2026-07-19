@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './styles/footer.css';
 
-// TODO: Update with your name
-const COPYRIGHT_NAME = 'Your Name';
+const COPYRIGHT_NAME = 'Wichayut Phongphanpanya';
 const CURRENT_YEAR = new Date().getFullYear();
 
 const Footer = () => {

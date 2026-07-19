@@ -1,38 +1,26 @@
-// TODO: Fill in your personal information below
 const INFO = {
   main: {
-    // TODO: Update with your name and portfolio title
-    title: 'Portfolio',
-    name: 'Your Name',
-    email: 'your.email@example.com',
-    // TODO: Replace with path to your logo image (place it in public/)
-    logo: '/logo.png',
+    title: "Wichayut's Portfolio",
+    name: 'Wichayut (Dew) Phongphanpanya',
+    email: 'wichayutdew@gmail.com',
+    logo: './images/logo.svg',
   },
 
   socials: {
-    // TODO: Replace with your actual social media URLs
-    twitter: 'https://twitter.com/',
-    github: 'https://github.com/',
-    linkedin: 'https://linkedin.com/',
-    instagram: 'https://instagram.com/',
-    stackoverflow: 'https://stackoverflow.com/',
-    facebook: 'https://facebook.com/',
+    github: 'https://github.com/wichayutdew',
+    linkedin: 'https://www.linkedin.com/in/wichayutdew',
   },
 
   homepage: {
-    // TODO: Update with your tagline
-    title: 'Full-stack web and mobile app developer.',
-    // TODO: Update with a short bio
+    title: 'Wichayut (Dew) Phongphanpanya',
     description:
-      'I am a developer with experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills.',
+      'I am a senior software engineer with 5+ years of experience in building scalable, secure and reliable applications using various frameworks and technologies. Specialized in JVM ecosystem (Java/Scala/Kotlin) and distributed architectures.',
   },
 
   about: {
-    // TODO: Update with your about headline
-    title: "I'm Your Name. I live in Your City, where I design the future.",
-    // TODO: Update with your about description
+    title: 'About Wichayut (Dew) Phongphanpanya.',
     description:
-      "I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind.",
+      'I live in Bangkok, Thailand and worked on a variety of projects over the years.',
   },
 
   articles: {
@@ -41,51 +29,30 @@ const INFO = {
       'Chronological collection of my long-form thoughts on programming, leadership, product design, and more.',
   },
 
-  // TODO: Replace with your actual projects
   projects: [
     {
-      title: 'Project 1',
+      title: 'This Portfolio',
       description:
-        'Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.',
-      logo: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png',
+        'My take on building React with Typescript as a backend engineer',
+      logo: 'https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg',
       linkText: 'View Project',
-      link: 'https://github.com',
+      link: 'https://github.com/wichayutdew/portfolio',
     },
 
     {
-      title: 'Project 2',
-      description:
-        'Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.',
-      logo: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png',
+      title: 'My Arch Linux dotfiles',
+      description: 'My go to device configuration for Arch Linux',
+      logo: './images/dotfiles.svg',
       linkText: 'View Project',
-      link: 'https://github.com',
+      link: 'https://github.com/wichayutdew/dotfiles-arch',
     },
 
     {
-      title: 'Project 3',
-      description:
-        'Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.',
-      logo: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png',
+      title: 'My MacOS dotfiles',
+      description: 'My go to device configuration for MacOS',
+      logo: '/images/dotfiles.svg',
       linkText: 'View Project',
-      link: 'https://github.com',
-    },
-
-    {
-      title: 'Project 4',
-      description:
-        'Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.',
-      logo: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png',
-      linkText: 'View Project',
-      link: 'https://github.com',
-    },
-
-    {
-      title: 'Project 5',
-      description:
-        'Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.',
-      logo: 'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png',
-      linkText: 'View Project',
-      link: 'https://github.com',
+      link: 'https://github.com/wichayutdew/dotfiles-macos',
     },
   ] satisfies Array<{
     title: string;
@@ -96,7 +63,6 @@ const INFO = {
   }>,
 };
 
-// TODO: Add your work experience entries here
 const WORKS: Array<{
   company: string;
   role: string;
@@ -104,20 +70,28 @@ const WORKS: Array<{
   image: string;
 }> = [
   {
-    // TODO: Replace with your work experience
-    company: 'Company 1',
-    role: 'Software Engineer',
-    duration: '2022 - Present',
-    // TODO: Replace with company logo URL
-    image:
-      'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png',
+    company: 'Agoda',
+    role: 'Senior Software Engineer',
+    duration: 'Feb 2023 - Present',
+    image: '/images/agoda.png',
   },
   {
-    company: 'Company 2',
-    role: 'Software Engineer',
-    duration: '2020 - 2022',
-    image:
-      'https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png',
+    company: 'ExxonMobil',
+    role: 'Backend Developer',
+    duration: 'Apr 2022 - Jan 2023',
+    image: '/images/exxonmobil.jpeg',
+  },
+  {
+    company: 'ExxonMobil',
+    role: 'System Coordinator',
+    duration: 'Aug 2020 - Mar 2022',
+    image: '/images/exxonmobil.jpeg',
+  },
+  {
+    company: 'Relifnow (Start up)',
+    role: 'Founding Engineer',
+    duration: 'Jun 2019 - Sept 2023',
+    image: '/images/relifnow.png',
   },
 ];
 
