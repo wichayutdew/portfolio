@@ -34,4 +34,4 @@ jobs:
           target: production
           prebuilt: true
           vercel-output-dir: dist/
-          force: true
+          vercel-args: --yes
