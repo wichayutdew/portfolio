@@ -1,12 +1,19 @@
-name: Preview Deployment
+name: Pull Request
 
 on:
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+
   preview:
-    name: Vercel Preview
+    name: Deploy Preview
+    needs: build
     runs-on: ubuntu-latest
+    environment: preview
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -16,10 +23,10 @@ jobs:
 
       - name: Deploy Preview to Vercel
         uses: amondnet/vercel-action@v42
-        id: vercel-preview
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-org-id: ${{ env.VERCEL_ORG_ID }}
           vercel-project-id: ${{ env.VERCEL_PROJECT_ID }}
           prebuilt: true
+          vercel-output-dir: dist/

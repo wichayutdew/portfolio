@@ -1,27 +1,27 @@
-name: Production Deployment
+name: Deploy
 
 on:
-  workflow_run:
-    workflows: ['CI']
-    types: [completed]
-    branches: [main]
+  push:
+    branches:
+      - main
 
 jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+
   deploy:
-    name: Vercel Production
+    name: Deploy Production
+    needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: dist/
 
       - name: Deploy Production to Vercel
         uses: amondnet/vercel-action@v42
-        id: vercel-deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -29,3 +29,4 @@ jobs:
           vercel-project-id: ${{ env.VERCEL_PROJECT_ID }}
           vercel-args: --prod
           prebuilt: true
+          vercel-output-dir: dist/
