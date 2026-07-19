@@ -10,6 +10,7 @@
     "prepare": "husky",
     "format": "bunx prettier . --write",
     "lint": "bun --bun eslint .",
+    "test": "bun test",
     "lint:fix": "bun --bun eslint . --fix && prettier . --write"
   },
   "lint-staged": {

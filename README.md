@@ -1,3 +1,6 @@
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/wichayutdew?style=plastic)
+[![codecov](https://codecov.io/gh/wichayutdew/portfolio/graph/badge.svg?token=tJ5l4KnkAe)](https://codecov.io/gh/wichayutdew/portfolio)
+
 # bun-react-template
 
 To install dependencies:
