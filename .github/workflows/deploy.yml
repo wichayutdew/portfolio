@@ -13,12 +13,16 @@ jobs:
     name: Deploy Production
     needs: build
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
 
       - name: Deploy Production to Vercel
         uses: amondnet/vercel-action@v42
@@ -27,5 +31,7 @@ jobs:
           github-token: ${{ secrets.WRITE_TOKEN }}
           vercel-org-id: ${{ env.VERCEL_ORG_ID }}
           vercel-project-id: ${{ env.VERCEL_PROJECT_ID }}
-          vercel-args: --prod
-          vercel-build: true
+          target: production
+          prebuilt: true
+          vercel-output-dir: dist/
+          vercel-args: --yes
