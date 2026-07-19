@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Homepage from './pages/homepage';
 import About from './pages/about';
 import Projects from './pages/projects';
@@ -18,6 +20,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
