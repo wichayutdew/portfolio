@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
 import './styles/footer.css';
+import INFO from '../../data/user';
 
-const COPYRIGHT_NAME = 'Wichayut Phongphanpanya';
 const CURRENT_YEAR = new Date().getFullYear();
 
 const Footer = () => {
@@ -20,9 +20,6 @@ const Footer = () => {
             <Link to="/projects">Projects</Link>
           </li>
           <li className="footer-nav-link-item">
-            <Link to="/articles">Articles</Link>
-          </li>
-          <li className="footer-nav-link-item">
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
@@ -30,7 +27,7 @@ const Footer = () => {
 
       <div className="footer-credits">
         <div className="footer-credits-text">
-          © {CURRENT_YEAR} {COPYRIGHT_NAME}. All Rights Reserved.
+          © {CURRENT_YEAR} {INFO.main.name}. All Rights Reserved.
         </div>
       </div>
     </div>

@@ -78,6 +78,31 @@ const Homepage = () => {
             </div>
           </div>
 
+          <div className="homepage-socials">
+            <a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="homepage-social-icon"
+              />
+            </a>
+            <a href={INFO.socials.github} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon
+                icon={faGithub}
+                className="homepage-social-icon"
+              />
+            </a>
+            <a
+              href={`mailto:${INFO.main.email}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faMailBulk}
+                className="homepage-social-icon"
+              />
+            </a>
+          </div>
+
           <div className="homepage-container">
             <div className="homepage-first-area">
               <div className="homepage-first-area-left-side">
@@ -89,86 +114,9 @@ const Homepage = () => {
                   {INFO.homepage.description}
                 </div>
               </div>
-
-              <div className="homepage-first-area-right-side">
-                <div className="homepage-image-container">
-                  <div className="homepage-image-wrapper">
-                    {/* TODO: Replace with your profile image (place in public/homepage.jpg) */}
-                    <img
-                      src="/images/logo.svg"
-                      alt="about"
-                      className="homepage-image"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="homepage-socials">
-              {/* <a href={INFO.socials.twitter} target="_blank" rel="noreferrer"> */}
-              {/*   <FontAwesomeIcon */}
-              {/*     icon={faTwitter} */}
-              {/*     className="homepage-social-icon" */}
-              {/*   /> */}
-              {/* </a> */}
-              <a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  className="homepage-social-icon"
-                />
-              </a>
-              <a href={INFO.socials.github} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className="homepage-social-icon"
-                />
-              </a>
-              {/* <a */}
-              {/*   href={INFO.socials.stackoverflow} */}
-              {/*   target="_blank" */}
-              {/*   rel="noreferrer" */}
-              {/* > */}
-              {/*   <FontAwesomeIcon */}
-              {/*     icon={faStackOverflow} */}
-              {/*     className="homepage-social-icon" */}
-              {/*   /> */}
-              {/* </a> */}
-              {/* <a href={INFO.socials.instagram} target="_blank" rel="noreferrer"> */}
-              {/*   <FontAwesomeIcon */}
-              {/*     icon={faInstagram} */}
-              {/*     className="homepage-social-icon" */}
-              {/*   /> */}
-              {/* </a> */}
-              <a
-                href={`mailto:${INFO.main.email}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon
-                  icon={faMailBulk}
-                  className="homepage-social-icon"
-                />
-              </a>
             </div>
 
             <div className="homepage-after-title">
-              {/* <div className="homepage-articles"> */}
-              {/*   {myArticles.map((article, index) => ( */}
-              {/*     <div */}
-              {/*       className="homepage-article" */}
-              {/*       key={(index + 1).toString()} */}
-              {/*     > */}
-              {/*       <Article */}
-              {/*         key={(index + 1).toString()} */}
-              {/*         date={article().date} */}
-              {/*         title={article().title} */}
-              {/*         description={article().description} */}
-              {/*         link={'/article/' + (index + 1)} */}
-              {/*       /> */}
-              {/*     </div> */}
-              {/*   ))} */}
-              {/* </div> */}
-
               <div className="homepage-works">
                 <Works />
               </div>

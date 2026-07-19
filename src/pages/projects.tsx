@@ -35,18 +35,10 @@ const Projects = () => {
             </div>
           </div>
           <div className="projects-container">
-            <div className="title projects-title">
-              Things I&apos;ve made trying to put my dent in the universe.
-            </div>
+            <div className="title projects-title">{INFO.projects.title}</div>
 
             <div className="subtitle projects-subtitle">
-              {/* TODO: Update with your projects description */}
-              I&apos;ve worked on a variety of projects over the years and
-              I&apos;m proud of the progress I&apos;ve made. Many of these
-              projects are open-source and available for others to explore and
-              contribute to. If you&apos;re interested in any of the projects
-              I&apos;ve worked on, please feel free to check out the code and
-              suggest any improvements or enhancements you might have in mind.
+              {INFO.projects.description}
             </div>
 
             <div className="projects-list">

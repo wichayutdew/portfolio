@@ -48,8 +48,11 @@ const About = () => {
               <div className="about-left-side">
                 <div className="about-image-container">
                   <div className="about-image-wrapper">
-                    {/* TODO: Replace with your about image (place in public/about.jpg) */}
-                    <img src="/about.jpg" alt="about" className="about-image" />
+                    <img
+                      src={INFO.main.profile}
+                      alt="about"
+                      className="about-image"
+                    />
                   </div>
                 </div>
 
