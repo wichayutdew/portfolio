@@ -1,7 +1,7 @@
 import { useState, useEffect, type CSSProperties } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { faMailBulk, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
@@ -101,6 +101,14 @@ const Homepage = () => {
                 className="homepage-social-icon"
               />
             </a>
+            <a
+              href={INFO.main.cv}
+              target="_blank"
+              rel="noreferrer"
+              className="homepage-cv-button"
+            >
+              <FontAwesomeIcon icon={faFilePdf} /> View my CV
+            </a>
           </div>
 
           <div className="homepage-container">
@@ -120,10 +128,6 @@ const Homepage = () => {
               <div className="homepage-works">
                 <Works />
               </div>
-            </div>
-
-            <div className="homepage-projects">
-              <AllProjects />
             </div>
 
             <div className="page-footer">

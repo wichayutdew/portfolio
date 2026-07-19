@@ -1,13 +1,30 @@
 /* eslint-disable css/no-invalid-properties */
+.works {
+  width: 100%;
+}
+
+.works .card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .works-body {
   margin-bottom: 10px;
 }
 
 .work {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
   padding-bottom: 40px;
-  width: 400px;
-  position: relative;
+  box-sizing: border-box;
+}
+
+.work-main {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .work-image {
@@ -16,29 +33,51 @@
   border-radius: 50%;
   outline: 6px solid white;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.work-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.work-details {
+  display: flex;
+  flex-direction: column;
 }
 
 .work-title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
-  padding-left: 20px;
-  margin-top: -3px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .work-subtitle {
-  position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--secondary-color);
-  padding-top: 22px;
-  padding-left: 50px;
+  margin-top: 4px;
 }
 
 .work-duration {
-  position: absolute;
-  width: 350px;
-  font-size: 12px;
-  padding-top: 20px;
-  text-align: right;
+  font-size: 13px;
   color: var(--tertiary-color);
+  white-space: nowrap;
+}
+
+.work-achievements {
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  padding-left: 50px;
+  width: 100%;
+  list-style-position: outside;
+  font-size: 13px;
+  color: var(--secondary-color);
+}
+
+.work-achievements li {
+  margin-bottom: 5px;
 }

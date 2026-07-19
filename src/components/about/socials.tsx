@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import INFO from '../../data/user';
@@ -27,20 +27,24 @@ const Socials = () => {
         </a>
       </div>
 
-      <div className="email">
-        <div className="email-wrapper">
-          <a
-            href={`mailto:${INFO.main.email}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="social-icon">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </div>
+      <div className="contact">
+        <a href={`mailto:${INFO.main.email}`} target="_blank" rel="noreferrer">
+          <div className="contact-icon">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </div>
 
-            <div className="social-text">{INFO.main.email}</div>
-          </a>
-        </div>
+          <div className="contact-text">{INFO.main.email}</div>
+        </a>
+      </div>
+
+      <div className="contact">
+        <a href={`tel:${INFO.main.phone}`} rel="noreferrer">
+          <div className="contact-icon">
+            <FontAwesomeIcon icon={faPhone} />
+          </div>
+
+          <div className="contact-text">{INFO.main.phone}</div>
+        </a>
       </div>
     </div>
   );
