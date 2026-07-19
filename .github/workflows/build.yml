@@ -23,6 +23,11 @@ jobs:
       - name: Test
         run: bun test
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Build
         run: bun run build
 
