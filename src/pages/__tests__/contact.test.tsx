@@ -28,7 +28,6 @@ describe('Contact', () => {
     expect(screen.getAllByText('Home').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('About').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Projects').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('Articles').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Contact').length).toBeGreaterThanOrEqual(2);
   });
 
@@ -45,11 +44,8 @@ describe('Contact', () => {
 
   test('renders social media links', () => {
     renderWithProviders(<Contact />);
-    const twitterLinks = screen.getAllByText('Follow on Twitter');
-    expect(twitterLinks.length).toBeGreaterThanOrEqual(1);
-
-    const githubLinks = screen.getAllByText('Follow on GitHub');
-    expect(githubLinks.length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('GitHub').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('LinkedIn').length).toBeGreaterThanOrEqual(1);
   });
 
   test('renders the footer', () => {

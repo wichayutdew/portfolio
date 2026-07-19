@@ -14,12 +14,11 @@ describe('Articles', () => {
     renderWithProviders(<Articles />);
   });
 
-  test("renders the navigation bar with 'articles' active", () => {
+  test('renders the navigation bar without any active item', () => {
     renderWithProviders(<Articles />);
     const nav = document.querySelector('.nav-background');
-    const activeLink = nav!.querySelector('li.active a');
-    expect(activeLink).toBeTruthy();
-    expect(activeLink!.textContent).toBe('Articles');
+    const activeItem = nav!.querySelector('li.active');
+    expect(activeItem).toBeNull();
   });
 
   test('renders navigation bar and footer links', () => {
@@ -27,7 +26,6 @@ describe('Articles', () => {
     expect(screen.getAllByText('Home').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('About').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Projects').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('Articles').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Contact').length).toBeGreaterThanOrEqual(2);
   });
 

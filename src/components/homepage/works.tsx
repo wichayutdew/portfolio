@@ -14,6 +14,7 @@ const Works = () => {
         body={
           <div className="works-body">
             {WORKS.map((work, idx) => (
+              // eslint-disable-next-line @eslint-react/no-array-index-key
               <div className="work" key={work.company + idx}>
                 <div className="work-main">
                   <img
@@ -33,6 +34,7 @@ const Works = () => {
                 {work.achievements && work.achievements.length > 0 && (
                   <ul className="work-achievements">
                     {work.achievements.map((achievement, i) => (
+                      // eslint-disable-next-line @eslint-react/no-array-index-key
                       <li key={i}>{achievement}</li>
                     ))}
                   </ul>

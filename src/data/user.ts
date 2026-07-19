@@ -136,7 +136,7 @@ const INFO = {
     description: `
       Thank you for your interest in getting in touch with me.
 			I welcome your feedback, questions, and suggestions.
-			If you have a specific inquiry, please feel free to email or LinkedIn dm me.
+			If you have a specific inquiry, please feel free to email or LinkedIn direct message me.
   		Thanks again for your interest, and I look forward to hearing from you!
 		`,
   },

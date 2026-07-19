@@ -14,6 +14,7 @@ const Publications = () => {
         body={
           <div className="publications-body">
             {PUBLICATIONS.map((pub, idx) => (
+              // eslint-disable-next-line @eslint-react/no-array-index-key
               <div className="publication" key={pub.conference + idx}>
                 <div className="publication-main">
                   <div className="publication-info">

@@ -28,7 +28,6 @@ describe('Projects', () => {
     expect(screen.getAllByText('Home').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('About').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Projects').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('Articles').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Contact').length).toBeGreaterThanOrEqual(2);
   });
 
@@ -48,7 +47,7 @@ describe('Projects', () => {
 
   test('renders all project cards', () => {
     renderWithProviders(<Projects />);
-    for (const project of INFO.projects) {
+    for (const project of INFO.projects.list) {
       expect(screen.getByText(project.title)).toBeInTheDocument();
     }
   });
@@ -56,7 +55,7 @@ describe('Projects', () => {
   test('renders project links with correct text', () => {
     renderWithProviders(<Projects />);
     const viewLinks = screen.getAllByText('View Project');
-    expect(viewLinks).toHaveLength(INFO.projects.length);
+    expect(viewLinks).toHaveLength(INFO.projects.list.length);
   });
 
   test('renders the footer', () => {

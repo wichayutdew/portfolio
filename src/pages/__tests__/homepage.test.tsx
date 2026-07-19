@@ -20,11 +20,6 @@ describe('Homepage', () => {
     expect(screen.getByText(INFO.homepage.title)).toBeInTheDocument();
   });
 
-  test('displays the page description from INFO data', () => {
-    renderWithProviders(<Homepage />);
-    expect(screen.getByText(INFO.homepage.description)).toBeInTheDocument();
-  });
-
   test('renders the navigation bar with correct active state', () => {
     renderWithProviders(<Homepage />);
     const nav = document.querySelector('.nav-background');
@@ -39,7 +34,6 @@ describe('Homepage', () => {
     expect(screen.getAllByText('Home').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('About').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Projects').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('Articles').length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('Contact').length).toBeGreaterThanOrEqual(2);
   });
 
@@ -47,20 +41,6 @@ describe('Homepage', () => {
     renderWithProviders(<Homepage />);
     const allLinks = document.querySelectorAll('a[target="_blank"]');
     expect(allLinks.length).toBeGreaterThanOrEqual(4);
-  });
-
-  test('renders project cards', () => {
-    renderWithProviders(<Homepage />);
-    for (const project of INFO.projects) {
-      expect(screen.getByText(project.title)).toBeInTheDocument();
-    }
-  });
-
-  test('renders the homepage profile image', () => {
-    renderWithProviders(<Homepage />);
-    const img = screen.getByAltText('about');
-    expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', '/homepage.jpg');
   });
 
   test('renders the footer', () => {

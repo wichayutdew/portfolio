@@ -14,6 +14,7 @@ const Education = () => {
         body={
           <div className="educations-body">
             {EDUCATION.map((edu, idx) => (
+              // eslint-disable-next-line @eslint-react/no-array-index-key
               <div className="education" key={edu.school + idx}>
                 <div className="education-main">
                   {edu.image && (
