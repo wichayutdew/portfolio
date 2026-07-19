@@ -1,6 +1,5 @@
 import logoUrl from '@/assets/logo.png';
 import profileImage from '@/assets/profile.jpg';
-import cvPdf from '@/assets/cv.pdf';
 import agodaLogo from '@/assets/agoda.png';
 import exxonMobilLogo from '@/assets/exxonmobil.jpeg';
 import relifnowLogo from '@/assets/relifnow.png';
@@ -17,7 +16,7 @@ const INFO = {
     location: 'Bangkok, Thailand',
     logo: logoUrl,
     profile: profileImage,
-    cv: cvPdf,
+    cv: '/api/cv',
   },
 
   socials: {

@@ -48,4 +48,14 @@ describe('Homepage', () => {
     const footer = screen.getByText(/All Rights Reserved/);
     expect(footer).toBeInTheDocument();
   });
+
+  test('CV button links to /api/cv with correct attributes', () => {
+    renderWithProviders(<Homepage />);
+    const cvLink = screen.getByText(/View my CV/).closest('a');
+    expect(cvLink).toBeTruthy();
+    expect(cvLink).toHaveAttribute('href', '/api/cv');
+    expect(cvLink).toHaveAttribute('target', '_blank');
+    expect(cvLink).toHaveAttribute('rel', 'noreferrer');
+    expect(cvLink).toHaveClass('homepage-cv-button');
+  });
 });
