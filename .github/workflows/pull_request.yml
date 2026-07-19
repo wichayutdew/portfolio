@@ -34,3 +34,4 @@ jobs:
           target: preview
           prebuilt: true
           vercel-output-dir: dist/
+          force: true
