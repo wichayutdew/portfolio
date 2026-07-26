@@ -93,42 +93,72 @@ const INFO = {
       "I've worked on a variety of projects over the years and I'm proud of the progress I've made. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind.",
     list: [
       {
+        title: 'Pi Workflows',
+        description: 'A declarative, pauseable workflow harness for Pi.',
+        logo: 'https://pi.dev/logo-auto.svg',
+        actions: [
+          {
+            label: 'GitHub',
+            link: 'https://github.com/wichayutdew/pi-workflows',
+          },
+          {
+            label: 'npm',
+            link: 'https://www.npmjs.com/package/@wichayutdew/pi-workflows',
+          },
+        ],
+      },
+
+      {
         title: 'My Portfolio (This website!)',
         description:
           'My take on building React with Typescript as a backend engineer',
         logo: 'https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg',
-        linkText: 'View Project',
-        link: 'https://github.com/wichayutdew/portfolio',
+        actions: [
+          {
+            label: 'GitHub',
+            link: 'https://github.com/wichayutdew/portfolio',
+          },
+        ],
       },
 
       {
         title: 'My Arch Linux dotfiles',
         description: 'My go to device configuration for Arch Linux',
         logo: dotfilesLogo,
-        linkText: 'View Project',
-        link: 'https://github.com/wichayutdew/dotfiles-arch',
+        actions: [
+          {
+            label: 'GitHub',
+            link: 'https://github.com/wichayutdew/dotfiles-arch',
+          },
+        ],
       },
 
       {
         title: 'My MacOS dotfiles',
         description: 'My go to device configuration for MacOS',
         logo: dotfilesLogo,
-        linkText: 'View Project',
-        link: 'https://github.com/wichayutdew/dotfiles-macos',
+        actions: [
+          {
+            label: 'GitHub',
+            link: 'https://github.com/wichayutdew/dotfiles-macos',
+          },
+        ],
       },
     ] satisfies Array<{
       title: string;
       description: string;
       logo: string;
-      linkText: string;
-      link: string;
+      actions: Array<{
+        label: 'GitHub' | 'npm';
+        link: string;
+      }>;
     }>,
   },
 
   articles: {
     title: "I'm passionate about pushing the boundaries of what's possible.",
     description:
-      'Chronological collection of my long-form thoughts on programming, leadership, product design, and more.',
+      'Collection of my thoughts on programming, leadership, product design, and more.',
   },
 
   contact: {

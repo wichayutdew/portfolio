@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 
 import './styles/project.css';
 
@@ -8,35 +7,42 @@ interface ProjectProps {
   logo: string;
   title: string;
   description: string;
-  linkText: string;
-  link: string;
+  actions: Array<{
+    label: 'GitHub' | 'npm';
+    link: string;
+  }>;
 }
 
-const Project = ({
-  logo,
-  title,
-  description,
-  linkText,
-  link,
-}: ProjectProps) => {
+const actionIcons = {
+  GitHub: faGithub,
+  npm: faNpm,
+};
+
+const Project = ({ logo, title, description, actions }: ProjectProps) => {
   return (
     <div className="project">
-      <Link to={link}>
-        <div className="project-container">
-          <div className="project-logo">
-            <img src={logo} alt="logo" />
-          </div>
-          <div className="project-title">{title}</div>
-          <div className="project-description">{description}</div>
-          <div className="project-link">
-            <div className="project-link-icon">
-              <FontAwesomeIcon icon={faLink} />
-            </div>
-
-            <div className="project-link-text">{linkText}</div>
-          </div>
+      <div className="project-container">
+        <div className="project-logo">
+          <img src={logo} alt={`${title} logo`} />
         </div>
-      </Link>
+        <div className="project-title">{title}</div>
+        <div className="project-description">{description}</div>
+        <div className="project-actions">
+          {actions.map((action) => (
+            <a
+              key={action.label}
+              className="project-action"
+              href={action.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${action.label}: ${title}`}
+              title={action.label}
+            >
+              <FontAwesomeIcon icon={actionIcons[action.label]} />
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
