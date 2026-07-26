@@ -14,19 +14,20 @@ describe('Articles', () => {
     renderWithProviders(<Articles />);
   });
 
-  test('renders the navigation bar without any active item', () => {
+  test("renders the navigation bar with 'articles' active", () => {
     renderWithProviders(<Articles />);
     const nav = document.querySelector('.nav-background');
-    const activeItem = nav!.querySelector('li.active');
-    expect(activeItem).toBeNull();
+    const activeLink = nav!.querySelector('li.active a');
+    expect(activeLink).toBeTruthy();
+    expect(activeLink!.textContent).toBe('Articles');
   });
 
-  test('renders navigation bar and footer links', () => {
+  test('renders Articles in navigation and footer', () => {
     renderWithProviders(<Articles />);
-    expect(screen.getAllByText('Home').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('About').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('Projects').length).toBeGreaterThanOrEqual(2);
-    expect(screen.getAllByText('Contact').length).toBeGreaterThanOrEqual(2);
+    const articleLinks = screen.getAllByRole('link', { name: 'Articles' });
+    expect(articleLinks).toHaveLength(2);
+    expect(articleLinks[0]).toHaveAttribute('href', '/articles');
+    expect(articleLinks[1]).toHaveAttribute('href', '/articles');
   });
 
   test('displays the articles heading', () => {
@@ -41,17 +42,25 @@ describe('Articles', () => {
     expect(screen.getByText(/Chronological collection/)).toBeInTheDocument();
   });
 
-  test('shows empty state message', () => {
+  test('lists requested externally linked guides without an empty state', () => {
     renderWithProviders(<Articles />);
-    expect(
-      screen.getByText('No articles yet. Check back soon!'),
-    ).toBeInTheDocument();
-  });
 
-  test('has a back to home link', () => {
-    renderWithProviders(<Articles />);
-    const backLink = screen.getByText(/Back to Home/);
-    expect(backLink).toHaveAttribute('href', '/');
+    expect(
+      screen.getByRole('link', {
+        name: 'Read guide: Install, set up, and use pi-workflows',
+      }),
+    ).toHaveAttribute('href', 'https://github.com/wichayutdew/pi-workflows');
+    expect(
+      screen.getByRole('link', {
+        name: 'Read guide: Install Arch Linux with Limine, Ly, and Hyprland',
+      }),
+    ).toHaveAttribute(
+      'href',
+      'https://github.com/wichayutdew/dotfiles-arch/blob/master/README.md',
+    );
+    expect(
+      screen.queryByText('No articles yet. Check back soon!'),
+    ).not.toBeInTheDocument();
   });
 
   test('renders the footer', () => {
