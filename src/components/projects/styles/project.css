@@ -16,7 +16,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.project:hover .project-action {
+.project-action:hover {
   color: var(--link-color);
   transition: color 0.3s ease-in-out;
 }

@@ -93,6 +93,22 @@ const INFO = {
       "I've worked on a variety of projects over the years and I'm proud of the progress I've made. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind.",
     list: [
       {
+        title: 'Pi Workflows',
+        description: 'A declarative, pauseable workflow harness for Pi.',
+        logo: 'https://pi.dev/logo-auto.svg',
+        actions: [
+          {
+            label: 'GitHub',
+            link: 'https://github.com/wichayutdew/pi-workflows',
+          },
+          {
+            label: 'npm',
+            link: 'https://www.npmjs.com/package/@wichayutdew/pi-workflows',
+          },
+        ],
+      },
+
+      {
         title: 'My Portfolio (This website!)',
         description:
           'My take on building React with Typescript as a backend engineer',
@@ -128,22 +144,6 @@ const INFO = {
           },
         ],
       },
-
-      {
-        title: 'Pi Workflows',
-        description: 'A declarative, pauseable workflow harness for Pi.',
-        logo: 'https://pi.dev/logo-auto.svg',
-        actions: [
-          {
-            label: 'GitHub',
-            link: 'https://github.com/wichayutdew/pi-workflows',
-          },
-          {
-            label: 'npm',
-            link: 'https://www.npmjs.com/package/@wichayutdew/pi-workflows',
-          },
-        ],
-      },
     ] satisfies Array<{
       title: string;
       description: string;
@@ -158,7 +158,7 @@ const INFO = {
   articles: {
     title: "I'm passionate about pushing the boundaries of what's possible.",
     description:
-      'Chronological collection of my long-form thoughts on programming, leadership, product design, and more.',
+      'Collection of my thoughts on programming, leadership, product design, and more.',
   },
 
   contact: {
