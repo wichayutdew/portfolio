@@ -71,6 +71,15 @@ describe('Projects', () => {
     }
   });
 
+  test('applies accent color only to hovered project action icons', async () => {
+    const stylesheet = await Bun.file(
+      new URL('../../components/projects/styles/project.css', import.meta.url),
+    ).text();
+
+    expect(stylesheet).not.toContain('.project:hover .project-action');
+    expect(stylesheet).toContain('.project-action:hover');
+  });
+
   test('renders Pi Workflows with requested logo, description, and actions', () => {
     renderWithProviders(<Projects />);
 
