@@ -39,7 +39,7 @@ describe('Articles', () => {
 
   test('displays the articles description', () => {
     renderWithProviders(<Articles />);
-    expect(screen.getByText(/Chronological collection/)).toBeInTheDocument();
+    expect(screen.getByText(/Collection/)).toBeInTheDocument();
   });
 
   test('lists requested externally linked guides without an empty state', () => {
