@@ -11,6 +11,7 @@ const AllProjects = () => {
         <div className="all-projects-project" key={project.title}>
           <Project
             logo={project.logo}
+            darkModeLogo={project.darkModeLogo}
             title={project.title}
             description={project.description}
             actions={project.actions}

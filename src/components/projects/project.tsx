@@ -5,6 +5,7 @@ import './styles/project.css';
 
 interface ProjectProps {
   logo: string;
+  darkModeLogo?: boolean;
   title: string;
   description: string;
   actions: Array<{
@@ -18,12 +19,24 @@ const actionIcons = {
   npm: faNpm,
 };
 
-const Project = ({ logo, title, description, actions }: ProjectProps) => {
+const Project = ({
+  logo,
+  darkModeLogo = false,
+  title,
+  description,
+  actions,
+}: ProjectProps) => {
   return (
     <div className="project">
       <div className="project-container">
         <div className="project-logo">
-          <img src={logo} alt={`${title} logo`} />
+          <img
+            className={
+              darkModeLogo ? 'project-logo-image--dark-mode' : undefined
+            }
+            src={logo}
+            alt={`${title} logo`}
+          />
         </div>
         <div className="project-title">{title}</div>
         <div className="project-description">{description}</div>

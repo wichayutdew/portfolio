@@ -33,6 +33,16 @@
   width: 100%;
 }
 
+:root[data-theme='dark'] .project-logo-image--dark-mode {
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .project-logo-image--dark-mode {
+    filter: brightness(0) invert(1);
+  }
+}
+
 .project-title {
   font-family: var(--secondary-font);
   color: var(--primary-color);

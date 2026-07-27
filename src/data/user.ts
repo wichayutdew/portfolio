@@ -113,6 +113,7 @@ const INFO = {
         description:
           'My take on building React with Typescript as a backend engineer',
         logo: 'https://cdn.jsdelivr.net/npm/simple-icons/icons/react.svg',
+        darkModeLogo: true,
         actions: [
           {
             label: 'GitHub',
@@ -148,6 +149,7 @@ const INFO = {
       title: string;
       description: string;
       logo: string;
+      darkModeLogo?: boolean;
       actions: Array<{
         label: 'GitHub' | 'npm';
         link: string;
