@@ -8,21 +8,24 @@ import Projects from './pages/projects';
 import Articles from './pages/articles';
 import Contact from './pages/contact';
 import NotFound from './pages/notfound';
+import { ThemeProvider } from './components/common/theme';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Analytics />
-      <SpeedInsights />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Analytics />
+        <SpeedInsights />
+      </div>
+    </ThemeProvider>
   );
 }
 

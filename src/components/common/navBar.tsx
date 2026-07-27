@@ -1,38 +1,18 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './styles/navBar.css';
+import { useTheme } from './theme';
 
 interface NavBarProps {
   active: string;
 }
 
-type Theme = 'dark' | 'light';
-
-const getDeviceTheme = (): Theme =>
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
 const NavBar = ({ active }: NavBarProps) => {
-  const [theme, setTheme] = useState<Theme>(getDeviceTheme);
+  const { theme, toggleTheme } = useTheme();
   const toggleLabel =
     theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handlePreferenceChange = (event: MediaQueryListEvent) => {
-      setTheme(event.matches ? 'dark' : 'light');
-    };
-
-    mediaQuery.addEventListener('change', handlePreferenceChange);
-    return () =>
-      mediaQuery.removeEventListener('change', handlePreferenceChange);
-  }, []);
 
   return (
     <div className="nav-container">
@@ -65,7 +45,7 @@ const NavBar = ({ active }: NavBarProps) => {
             type="button"
             className="theme-toggle"
             aria-label={toggleLabel}
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            onClick={toggleTheme}
           >
             <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
           </button>

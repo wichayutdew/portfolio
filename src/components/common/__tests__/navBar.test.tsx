@@ -54,7 +54,8 @@ afterEach(() => {
 });
 
 describe('NavBar theme controls', () => {
-  test('uses dark device preference on initial render', () => {
+  test('uses device preference when no valid saved theme exists', () => {
+    localStorage.setItem('theme', 'invalid');
     mockMatchMedia(true);
 
     renderWithProviders(<NavBar active="home" />);
@@ -65,8 +66,8 @@ describe('NavBar theme controls', () => {
     ).toBeTruthy();
   });
 
-  test('switches theme and control label without persistence', () => {
-    mockMatchMedia(false);
+  test('persists manual theme selection through remounts and device changes', () => {
+    const mediaQuery = mockMatchMedia(false);
 
     renderWithProviders(<NavBar active="home" />);
 
@@ -74,11 +75,26 @@ describe('NavBar theme controls', () => {
       screen.getByRole('button', { name: 'Switch to dark mode' }),
     );
 
+    expect(localStorage.getItem('theme')).toBe('dark');
+    expect(mediaQuery.listenerCount()).toBe(0);
     expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
     expect(
       screen.getByRole('button', { name: 'Switch to light mode' }),
     ).toBeTruthy();
-    expect(localStorage.length).toBe(0);
+
+    act(() => {
+      mediaQuery.setMatches(false);
+    });
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+
+    cleanup();
+    renderWithProviders(<NavBar active="home" />);
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+    expect(
+      screen.getByRole('button', { name: 'Switch to light mode' }),
+    ).toBeTruthy();
   });
 
   test('updates theme when device preference changes and cleans up listener', () => {
