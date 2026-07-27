@@ -4,7 +4,7 @@ const stylesheet = async (relativePath: string) =>
   Bun.file(new URL(relativePath, import.meta.url)).text();
 
 describe('responsive layout stylesheet contract', () => {
-  test('bounds shared page geometry with border-box gutters and non-negative rails', async () => {
+  test('expands shared page geometry inside responsive gutters', async () => {
     const appStyles = await stylesheet('../../../app.css');
 
     expect(appStyles).toContain('box-sizing: border-box;');
@@ -12,8 +12,25 @@ describe('responsive layout stylesheet contract', () => {
     expect(appStyles).toContain(
       'width: calc(100% - var(--page-gutter) - var(--page-gutter));',
     );
-    expect(appStyles).toContain('max-width: 1000px;');
-    expect(appStyles).toContain('width: max(0px, calc((100% - 1200px) / 2));');
+    expect(appStyles).not.toContain('max-width: 1000px;');
+    expect(appStyles).not.toContain('.page-content:before');
+    expect(appStyles).not.toContain('.page-content:after');
+  });
+
+  test('uses flex growth and normal-flow footer spacing for shared and Homepage layouts', async () => {
+    const [appStyles, homeStyles] = await Promise.all([
+      stylesheet('../../../app.css'),
+      stylesheet('../../../pages/styles/homepage.css'),
+    ]);
+
+    expect(appStyles).toContain('min-height: 100vh;');
+    expect(appStyles).toContain('flex-direction: column;');
+    expect(appStyles).toContain('flex: 1;');
+    expect(appStyles).toContain('margin-top: auto;');
+    expect(appStyles).not.toContain('position: fixed;');
+    expect(homeStyles).toContain('.homepage-container {\n  display: flex;');
+    expect(homeStyles).toContain('flex: 1;');
+    expect(homeStyles).toContain('flex-direction: column;');
   });
 
   test('keeps navigation and footer controls within narrow viewports', async () => {
