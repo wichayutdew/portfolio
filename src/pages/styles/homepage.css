@@ -1,8 +1,8 @@
 /* eslint-disable css/no-invalid-properties */
 .homepage-logo-container {
   display: flex;
-  justify-content: left;
   align-items: center;
+  justify-content: left;
   padding-top: 130px;
 }
 
@@ -12,32 +12,34 @@
 
 .homepage-first-area {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .homepage-first-area-left-side {
   display: flex;
+  min-width: 0;
+  flex: 1 1 0;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.homepage-container .homepage-title {
-  width: 85%;
-}
-
+.homepage-container .homepage-title,
 .homepage-container .homepage-subtitle {
   width: 85%;
 }
 
 .homepage-first-area-right-side {
   display: flex;
+  min-width: 0;
+  flex: 0 1 370px;
   align-items: center;
 }
 
 .homepage-image-container {
-  width: 370px;
-  height: 370px;
+  width: min(370px, 100%);
+  aspect-ratio: 1;
 }
 
 .homepage-image-wrapper {
@@ -47,21 +49,24 @@
 }
 
 .homepage-image-wrapper img {
+  display: block;
   width: 100%;
+  height: auto;
 }
 
 .homepage-socials {
   display: flex;
-  justify-content: left;
+  flex-wrap: wrap;
+  gap: 12px 20px;
   align-items: center;
+  justify-content: left;
   padding-top: 30px;
 }
 
 .homepage-social-icon {
-  padding-right: 20px;
+  color: var(--secondary-color);
   font-size: 25px;
   transition: color 0.2s ease-in-out;
-  color: var(--secondary-color);
 }
 
 .homepage-social-icon:hover {
@@ -70,122 +75,93 @@
 
 .homepage-cv-button {
   display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
   padding: 8px 16px;
-  margin-left: 10px;
-  border-radius: 8px;
-  background-color: var(--primary-color);
+  margin-left: 0;
   color: var(--on-primary-color);
-  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  border-radius: 8px;
   transition: background-color 0.2s ease-in-out;
 }
 
 .homepage-cv-button:hover {
-  background-color: var(--secondary-color);
   color: var(--on-primary-color);
+  background-color: var(--secondary-color);
 }
 
 .homepage-after-title {
   display: flex;
+  gap: 30px;
 }
 
 .homepage-projects {
-  flex-basis: 300px;
+  min-width: 0;
+  flex: 1 1 300px;
   padding-top: 40px;
 }
 
 .homepage-articles {
-  flex-basis: 900px;
+  min-width: 0;
+  flex: 1 1 0;
   padding-top: 30px;
-  margin-left: -30px;
 }
 
 .homepage-article {
   padding-bottom: 5px;
 }
 
-.homepage-works {
-  flex-basis: 100%;
-  padding-top: 30px;
-}
-
-.homepage-education {
-  flex-basis: 100%;
-  padding-top: 30px;
-}
-
+.homepage-works,
+.homepage-education,
 .homepage-publications {
+  min-width: 0;
   flex-basis: 100%;
   padding-top: 30px;
 }
 
 @media (max-width: 1024px) {
-  .homepage-first-area {
+  .homepage-first-area,
+  .homepage-after-title {
     flex-direction: column;
   }
 
   .homepage-first-area-left-side {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     width: 100%;
     order: 2;
   }
 
   .homepage-container .homepage-title {
     width: 100%;
-    margin-top: 20px;
     order: 2;
+    margin-top: 20px;
   }
 
   .homepage-container .homepage-subtitle {
     width: 100%;
-    margin-top: 10px;
     order: 3;
+    margin-top: 10px;
   }
 
   .homepage-first-area-right-side {
     width: 100%;
     order: 1;
+    justify-content: center;
   }
 
   .homepage-image-container {
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 10px;
     order: 1;
   }
 
-  .homepage-after-title {
-    flex-direction: column;
-  }
-
-  .homepage-projects {
-    flex-basis: auto;
-  }
-
-  .homepage-articles {
-    flex-basis: auto;
-  }
-
-  .homepage-works {
-    flex-basis: auto;
-    margin-left: -25px;
-    margin-right: -25px;
-  }
-
-  .homepage-education {
-    flex-basis: auto;
-    margin-left: -25px;
-    margin-right: -25px;
-  }
-
+  .homepage-projects,
+  .homepage-articles,
+  .homepage-works,
+  .homepage-education,
   .homepage-publications {
     flex-basis: auto;
-    margin-left: -25px;
-    margin-right: -25px;
   }
 }
