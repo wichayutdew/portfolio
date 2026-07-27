@@ -15,8 +15,8 @@
 .education {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   width: 100%;
+  align-items: flex-start;
   padding-bottom: 40px;
   box-sizing: border-box;
 }
@@ -27,48 +27,56 @@
 
 .education-main {
   display: flex;
-  align-items: center;
   width: 100%;
+  min-width: 0;
+  align-items: center;
 }
 
 .education-image {
-  height: 30px;
   width: 30px;
+  height: 30px;
+  flex-shrink: 0;
   border-radius: 50%;
   outline: 6px solid var(--logo-outline);
   box-shadow: 0px 7px 10px var(--shadow-color);
-  flex-shrink: 0;
 }
 
 .education-info {
-  flex: 1;
   display: flex;
-  justify-content: space-between;
+  min-width: 0;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   align-items: flex-start;
+  justify-content: space-between;
   padding-left: 20px;
 }
 
 .education-details {
   display: flex;
+  min-width: 0;
+  flex: 1 1 180px;
   flex-direction: column;
 }
 
 .education-title {
+  color: var(--primary-color);
   font-size: 17px;
   font-weight: 700;
-  color: var(--primary-color);
+  overflow-wrap: anywhere;
 }
 
 .education-subtitle {
-  font-size: 13px;
-  color: var(--secondary-color);
   margin-top: 4px;
+  color: var(--secondary-color);
+  font-size: 13px;
+  overflow-wrap: anywhere;
 }
 
 .education-gpa {
-  font-size: 13px;
-  color: var(--secondary-color);
   margin-top: 2px;
+  color: var(--secondary-color);
+  font-size: 13px;
 }
 
 .education-meta {
@@ -77,15 +85,26 @@
   align-items: flex-end;
 }
 
-.education-period {
-  font-size: 13px;
+.education-period,
+.education-location {
   color: var(--tertiary-color);
+  font-size: 13px;
   white-space: nowrap;
 }
 
 .education-location {
-  font-size: 13px;
-  color: var(--tertiary-color);
   margin-top: 2px;
-  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .education-meta {
+    flex-basis: 100%;
+    align-items: flex-start;
+  }
+
+  .education-period,
+  .education-location {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
