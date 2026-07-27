@@ -1,9 +1,9 @@
 /* eslint-disable css/no-invalid-properties */
 .card {
-  background-color: white;
+  background-color: var(--elevated-surface);
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px var(--shadow-color);
 }
 
 .card-header {

@@ -53,6 +53,25 @@ describe('Projects', () => {
     }
   });
 
+  test('marks the React project logo for dark-theme contrast', () => {
+    renderWithProviders(<Projects />);
+
+    expect(
+      screen.getByAltText('My Portfolio (This website!) logo'),
+    ).toHaveClass('project-logo-image--dark-mode');
+  });
+
+  test('uses a light render for dark-theme project logos', async () => {
+    const stylesheet = await Bun.file(
+      new URL('../../components/projects/styles/project.css', import.meta.url),
+    ).text();
+
+    expect(stylesheet).toContain(
+      ":root[data-theme='dark'] .project-logo-image--dark-mode",
+    );
+    expect(stylesheet).toContain('filter: brightness(0) invert(1);');
+  });
+
   test('renders labelled GitHub icon links without making project cards links', () => {
     renderWithProviders(<Projects />);
 

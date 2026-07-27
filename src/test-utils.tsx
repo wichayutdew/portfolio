@@ -3,10 +3,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import type { ReactNode } from 'react';
 
+import { ThemeProvider } from './components/common/theme';
+
 function AllProviders({ children }: { children: ReactNode }) {
   return (
     <HelmetProvider>
-      <BrowserRouter>{children}</BrowserRouter>
+      <BrowserRouter>
+        <ThemeProvider>{children}</ThemeProvider>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }
