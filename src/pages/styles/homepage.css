@@ -125,6 +125,10 @@
   padding-top: 30px;
 }
 
+.homepage-publications {
+  padding-bottom: 50px;
+}
+
 @media (max-width: 1024px) {
   .homepage-first-area,
   .homepage-after-title {
